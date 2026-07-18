@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+:root {
+  --font-family: "Outfit", "Inter", sans-serif;
+  --font-weight: 400;
+  
+  /* Light Theme Colors (Screenshot flat modern card style) */
+  --bg-app: #f4f4f6;
+  --bg-card: #ffffff;
+  --bg-inset: #f8f8fa;
+  --text-primary: #111111;
+  --text-secondary: #76767d;
+  --shadow-outset: 0 4px 20px rgba(0, 0, 0, 0.02), 0 2px 8px rgba(0, 0, 0, 0.01);
+  --shadow-inset: inset 0 2px 6px rgba(0, 0, 0, 0.02);
+  --border-color: rgba(0, 0, 0, 0.05);
+  --btn-vanilla-from: #ffffff;
+  --btn-vanilla-to: #fafafa;
+  --btn-vanilla-hover-from: #fafafa;
+  --btn-vanilla-hover-to: #f0f0f2;
+  --btn-vanilla-text: #111111;
+  --btn-vanilla-shadow-active: inset 0 2px 4px rgba(59, 147, 158, 0.05);
+  --orange-accent: #307392; /* Crimson Red accents */
+  --orange-accent-hover: #2f788a;
+  --orange-accent-active: #244d60;
+  --orange-active-shadow: 0 4px 12px rgba(56, 151, 168, 0.2);
+  --divider-color: #f2f2f7;
+  --scrollbar-thumb: #e5e5ea;
+  --orange-accent-light: rgba(38, 121, 160, 0.1);
+}
+
+.dark {
+  /* Dark Theme Colors */
+  --bg-app: #101312;
+  --bg-card: #181d1c;
+  --bg-inset: #131718;
+  --text-primary: #faf5e9;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --shadow-outset: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --shadow-inset: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+  --border-color: rgba(255, 255, 255, 0.04);
+  --btn-vanilla-from: #1c3230;
+  --btn-vanilla-to: #121a1c;
+  --btn-vanilla-hover-from: #1c777a;
+  --btn-vanilla-hover-to: #2e7061;
+  --btn-vanilla-text: rgba(255, 255, 255, 0.85);
+  --btn-vanilla-shadow-active: inset 0 2px 4px rgba(40, 98, 105, 0.4);
+  --orange-accent: #35afe0;
+  --orange-accent-hover: #2f788a;
+  --orange-accent-active: #244d60;
+  --orange-active-shadow: 0 4px 12px rgba(56, 151, 168, 0.2);
+  --divider-color: rgba(255, 255, 255, 0.06);
+  --scrollbar-thumb: #2d615d;
+  --orange-accent-light: rgba(56, 151, 168, 0.15);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-app);
+    color: var(--text-secondary);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p, span, button, input, select, td, th, label, div {
+    font-family: var(--font-family) !important;
+  }
+}
+
+/* Theme Helper Classes to avoid color conflicts */
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-orange {
+  color: var(--orange-accent) !important;
+}
+
+.bg-orange {
+  background-color: var(--orange-accent) !important;
+}
+
+.bg-orange-light {
+  background-color: var(--orange-accent-light) !important;
+}
+
+.bg-app-theme {
+  background-color: var(--bg-app) !important;
+}
+
+.bg-card-theme {
+  background-color: var(--bg-card) !important;
+}
+
+.bg-inset-theme {
+  background-color: var(--bg-inset) !important;
+}
+
+.glass-backdrop {
+  background-color: var(--glass-bg) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.border-theme {
+  border-color: var(--divider-color) !important;
+}
+
+.divide-theme > * + * {
+  border-color: var(--divider-color) !important;
+}
+
+.hover-row {
+  transition: background-color 0.15s ease;
+}
+
+.hover-row:hover {
+  background-color: var(--border-color) !important;
+}
+
+.bg-gradient-theme {
+  background: linear-gradient(135deg, var(--bg-app) 0%, var(--btn-vanilla-to) 100%) !important;
+}
+
+/* Neumorphic Outset Panel (Adapted to clean card styles) */
+.neumorph-outset {
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-outset);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Neumorphic Inset Panel */
+.neumorph-inset {
+  background-color: var(--bg-inset);
+  box-shadow: var(--shadow-inset);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Skeuomorphic clicky vanilla buttons */
+.neumorph-btn-vanilla {
+  background: linear-gradient(145deg, var(--btn-vanilla-from), var(--btn-vanilla-to));
+  box-shadow: var(--shadow-outset);
+  border: 1px solid var(--border-color);
+  color: var(--btn-vanilla-text);
+  transition: all 0.2s ease;
+}
+.neumorph-btn-vanilla:hover {
+  background: linear-gradient(145deg, var(--btn-vanilla-hover-from), var(--btn-vanilla-hover-to));
+}
+.neumorph-btn-vanilla:active {
+  box-shadow: var(--btn-vanilla-shadow-active);
+}
+
+/* Skeuomorphic clicky Burnt Orange buttons */
+.neumorph-btn-orange {
+  background: linear-gradient(145deg, var(--orange-accent-hover), var(--orange-accent));
+  box-shadow: var(--shadow-outset);
+  color: #ffffff !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+.neumorph-btn-orange:hover {
+  background: linear-gradient(145deg, var(--orange-accent-hover), var(--orange-accent-active));
+}
+.neumorph-btn-orange:active {
+  background: var(--orange-accent-active);
+  box-shadow: var(--orange-active-shadow);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-accent);
+}
+
+/* Tabular Figures Monospace Styling */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+/* Custom Inset Select Chevron Arrow */
+.neumorph-inset select {
+  appearance: none !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235e4e44' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 10px center !important;
+  background-size: 10px !important;
+  padding-right: 28px !important;
+}
+.dark .neumorph-inset select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238c8884' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+}
+
+/* Smooth Transition Tweaks */
+.neumorph-btn-vanilla, .neumorph-btn-orange, .neumorph-outset, .neumorph-inset {
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}

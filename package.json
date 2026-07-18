@@ -1,0 +1,34 @@
+{
+  "name": "Navyan Hospital",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "",
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "predev": "node -e \"const { execSync } = require('child_process'); [3333,5173].forEach(p => { try { const pid = execSync(`netstat -ano | findstr :${p} | findstr LISTENING`, {encoding:'utf8'}).trim().split(/\\s+/).pop(); if(pid) execSync('taskkill /PID ' + pid + ' /F', {stdio:'ignore'}); } catch(e){} });\"",
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "format": "turbo format",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "@adonisjs/assembler": "^8.4.0",
+    "@adonisjs/prettier-config": "^1.5.0",
+    "prettier": "^3.8.3",
+    "turbo": "^2.9.16"
+  },
+  "packageManager": "npm@11.11.0",
+  "prettier": "@adonisjs/prettier-config",
+  "dependencies": {
+    "react-icon": "^1.0.0",
+    "react-icons": "^5.7.0"
+  }
+}

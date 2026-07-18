@@ -10,11 +10,13 @@ import {
   FaFileInvoiceDollar,
   FaChartBar,
   FaUsers,
-  FaUniversity,
   FaWallet,
   FaBoxOpen,
   FaPrescriptionBottleAlt,
-  FaCog,
+  FaUserShield,
+
+  FaUsersCog,
+  FaUserCheck,
 } from 'react-icons/fa'
 import { PermissionKeys } from '../utils/permission'
 import type { Module } from '../types/sidebar'
@@ -53,12 +55,6 @@ export const modules: Module[] = [
             label: 'View / Edit (Call)',
             icon: <FaList className="size-6" />,
             permissions: [PermissionKeys.APPOINTMENT_LIST, PermissionKeys.APPOINTMENT_VIEW],
-          },
-          {
-            to: '/dashboard/appointments/pa/new',
-            label: 'Add (PA)',
-            icon: <FaPlus className="size-6" />,
-            permissions: [PermissionKeys.APPOINTMENT_PA_CREATE],
           },
         ],
       },
@@ -217,25 +213,25 @@ export const modules: Module[] = [
       {
         to: '/dashboard/permission',
         label: 'Permission',
-        icon: <FaUniversity className="size-6" />,
+        icon: <FaUserShield className="size-6" />,
         permissions: [PermissionKeys.PERMISSION_CREATE],
       },
       {
         to: '/dashboard/permissionlist',
         label: 'Permission List',
-        icon: <FaUniversity className="size-6" />,
+        icon: <FaUsersCog className="size-6" />,
         permissions: [PermissionKeys.PERMISSION_VIEW],
       },
       {
         to: '/dashboard/roll',
         label: 'Roll',
-        icon: <FaCog className="size-6" />,
+        icon: <FaUserCheck className="size-6" />,
         permissions: [PermissionKeys.ROLL_CREATE],
       },
       {
         to: '/dashboard/rolllist',
         label: 'Roll List',
-        icon: <FaCog className="size-6" />,
+        icon: <FaList  className="size-6" />,
         permissions: [PermissionKeys.ROLL_VIEW],
       },
     ],

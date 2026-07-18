@@ -14,6 +14,7 @@ import {
   FaBoxOpen,
   FaPrescriptionBottleAlt,
   FaUserShield,
+  FaUserCheck,
 } from 'react-icons/fa'
 import { PermissionKeys } from '../utils/permission'
 import type { Module } from '../types/sidebar'
@@ -121,11 +122,51 @@ export const modules: Module[] = [
       },
       {
         to: '/dashboard/rx',
-        label: 'RX',
+        label: 'RX - Prescription',
         icon: <FaPrescriptionBottleAlt className="size-6" />,
         permissions: [PermissionKeys.RX_ACCESS],
+        subLinks: [
+        {
+            to: '/dashboard/rx/new',
+            label: 'Add RX',
+            icon: <FaPlus className="size-6" />,
+            permissions: [PermissionKeys.RX_CREATE],
+        },
+          {
+            to: '/dashboard/rx/list',
+            label: 'View / Edit RX',
+            icon: <FaList className="size-6" />,
+            permissions: [PermissionKeys.RX_VIEW, PermissionKeys.RX_LIST],
+          },
+        ],
       },
     ],
+  },
+  {
+    moduleName:'Discharge Patient',
+    permissions: [PermissionKeys.DISCHARGE_PATIENT_ACCESS],
+    links: [
+      {
+        to: '/dashboard/discharge-patient',
+        label: 'Discharge Patient',
+        icon: <FaUserCheck className="size-6" />,
+        permissions: [PermissionKeys.DISCHARGE_PATIENT_VIEW],
+        subLinks: [
+          {
+            to: '/dashboard/discharge-patient/new',
+            label: 'Add Discharge Patient',
+            icon: <FaPlus className="size-6" />,
+            permissions: [PermissionKeys.DISCHARGE_PATIENT_CREATE],
+          },
+          {
+            to: '/dashboard/discharge-patient/list',
+            label: 'Discharge Report',
+            icon: <FaClipboardList className="size-6" />,
+            permissions: [PermissionKeys.DISCHARGE_PATIENT_VIEW],
+          },
+        ]
+      }
+    ]
   },
   {
     moduleName: 'Billing',
@@ -144,36 +185,19 @@ export const modules: Module[] = [
             permissions: [PermissionKeys.BILLING_VIEW],
           },
           {
-            to: '/dashboard/billing/discharge-report',
-            label: 'Discharge Report',
-            icon: <FaClipboardList className="size-6" />,
-            permissions: [PermissionKeys.BILLING_DISCHARGE_REPORT_VIEW],
-          },
-        ],
-      },
-      {
         to: '/dashboard/billing/pending-payment',
         label: 'Pending Payment',
         icon: <FaWallet className="size-6" />,
         permissions: [PermissionKeys.BILLING_PENDING_PAYMENT_VIEW],
       },
+        ],
+      },
+      
       {
         to: '/dashboard/billing/collection',
         label: 'This Month Collection',
         icon: <FaChartBar className="size-6" />,
         permissions: [PermissionKeys.BILLING_COLLECTION_VIEW],
-      },
-    ],
-  },
-  {
-    moduleName: 'Reports',
-    permissions: [PermissionKeys.REPORTS_ACCESS],
-    links: [
-      {
-        to: '/dashboard/reports',
-        label: 'Reports',
-        icon: <FaChartBar className="size-6" />,
-        permissions: [PermissionKeys.REPORTS_VIEW],
       },
     ],
   },
@@ -204,43 +228,33 @@ export const modules: Module[] = [
     ],
   },
   {
-    moduleName: "Core Management",
+    moduleName: 'Core Management',
 
-    permissions: [
-      PermissionKeys.CORE_MANAGEMENT_ACCESS,
-    ],
+    permissions: [PermissionKeys.CORE_MANAGEMENT_ACCESS],
 
     links: [
       {
-        to: "/dashboard/core-management/rolePermission",
-        label: "Role & Permission",
+        to: '/dashboard/core-management/rolePermission',
+        label: 'Role & Permission',
         icon: <FaUserShield className="size-6" />,
 
-        permissions: [
-          PermissionKeys.ROLES_VIEW,
-          PermissionKeys.ROLES_LIST,
-        ],
+        permissions: [PermissionKeys.ROLES_VIEW, PermissionKeys.ROLES_LIST],
 
         subLinks: [
           {
-            to: "/dashboard/core-management/rolePermission/new",
-            label: "Create Role",
+            to: '/dashboard/core-management/rolePermission/new',
+            label: 'Create Role',
             icon: <FaPlus className="size-6" />,
 
-            permissions: [
-              PermissionKeys.ROLES_CREATE,
-            ],
+            permissions: [PermissionKeys.ROLES_CREATE],
           },
 
           {
-            to: "/dashboard/core-management/rolePermission/list",
-            label: "Role List",
+            to: '/dashboard/core-management/rolePermission/list',
+            label: 'Role List',
             icon: <FaList className="size-6" />,
 
-            permissions: [
-              PermissionKeys.ROLES_LIST,
-              PermissionKeys.ROLES_VIEW,
-            ],
+            permissions: [PermissionKeys.ROLES_LIST, PermissionKeys.ROLES_VIEW],
           },
         ],
       },
@@ -255,6 +269,20 @@ export const modules: Module[] = [
         label: 'Stock / Items View',
         icon: <FaBoxOpen className="size-6" />,
         permissions: [PermissionKeys.MASTER_STOCK_VIEW],
+        subLinks: [
+          {
+            to: '/dashboard/master/stock/new',
+            label: 'Add Stock Item',
+            icon: <FaPlus className="size-6" />,
+            permissions: [PermissionKeys.MASTER_STOCK_CREATE],
+          },
+          {
+            to: '/dashboard/master/stock',
+            label: 'Stock / Items View',
+            icon: <FaList className="size-6" />,
+            permissions: [PermissionKeys.MASTER_STOCK_VIEW],
+          },
+        ],
       },
     ],
   },

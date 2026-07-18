@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useTheme } from '../hooks/useTheme';
+// import { useTheme } from '../hooks/useTheme';
 import type { User } from '../types';
 import {
   FaBars,
-  FaSearch,
-  FaSun,
-  FaMoon,
+  // FaSearch,
+  // FaSun,
+  // FaMoon,
   FaChevronDown,
   FaSignOutAlt,
   FaUserCircle,
@@ -61,9 +61,9 @@ const UserDropdown = ({ user }: UserDropdownProps) => {
     return () => document.removeEventListener('mousedown', handleOutside);
   }, [open]);
 
-  const initials = user?.initials ?? user?.fullName?.charAt(0) ?? '?';
-  const displayName = user?.fullName ?? 'Unknown User';
-  const role = user?.role ?? 'Staff';
+  const initials = user?.initials ?? user?.fullName?.charAt(0) ?? 'H';
+  const displayName = user?.fullName ?? 'Hospital admin';
+  const role = user?.role ?? 'admin';
 
   return (
     <div ref={ref} className="relative">
@@ -83,10 +83,10 @@ const UserDropdown = ({ user }: UserDropdownProps) => {
 
         {/* Name + role (hidden on small screens) */}
         <div className="hidden sm:flex flex-col text-left leading-tight">
-          <span className="text-xs font-semibold text-primary truncate max-w-[100px]">
+          <span className="text-xs font-semibold text-primary truncate max-w-25">
             {displayName}
           </span>
-          <span className="text-[10px] text-secondary truncate max-w-[100px]">
+          <span className="text-[10px] text-secondary truncate max-w-25">
             {role}
           </span>
         </div>
@@ -164,7 +164,7 @@ interface NavbarProps {
 
 const Navbar = ({ user, onMobileMenuOpen }: NavbarProps) => {
   const pageTitle = usePageTitle();
-  const { theme, toggleTheme } = useTheme();
+  // const { theme, toggleTheme } = useTheme();
 
   return (
     <header
@@ -190,7 +190,7 @@ const Navbar = ({ user, onMobileMenuOpen }: NavbarProps) => {
       {/* ── Spacer (mobile) ────────────────────────────────────────────── */}
       <div className="flex-1 sm:hidden" />
 
-      {/* ── Search input ───────────────────────────────────────────────── */}
+      {/* ── Search input ─────────────────────────────────────────────────
       <div
         id="patient-search-wrapper"
         className="relative hidden md:flex items-center"
@@ -203,10 +203,10 @@ const Navbar = ({ user, onMobileMenuOpen }: NavbarProps) => {
           className="pl-9 pr-4 py-2 text-xs rounded-xl w-64 neumorph-inset text-primary placeholder:text-secondary/60 focus:outline-none focus:ring-1 focus:ring-orange-light/40 bg-transparent transition-all duration-150"
           aria-label="Search patient by mobile number"
         />
-      </div>
+      </div> */}
 
       {/* ── Theme toggle ───────────────────────────────────────────────── */}
-      <button
+      {/* <button
         id="theme-toggle"
         type="button"
         onClick={toggleTheme}
@@ -218,7 +218,7 @@ const Navbar = ({ user, onMobileMenuOpen }: NavbarProps) => {
         ) : (
           <FaMoon className="size-4 text-secondary" />
         )}
-      </button>
+      </button> */}
 
       {/* ── User dropdown ──────────────────────────────────────────────── */}
       <UserDropdown user={user} />

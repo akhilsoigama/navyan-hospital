@@ -14,9 +14,6 @@ import {
   FaBoxOpen,
   FaPrescriptionBottleAlt,
   FaUserShield,
-
-  FaUsersCog,
-  FaUserCheck,
 } from 'react-icons/fa'
 import { PermissionKeys } from '../utils/permission'
 import type { Module } from '../types/sidebar'
@@ -207,32 +204,45 @@ export const modules: Module[] = [
     ],
   },
   {
-    moduleName: 'Permission',
-    permissions: [PermissionKeys.PERMISSION_ACCESS],
+    moduleName: "Core Management",
+
+    permissions: [
+      PermissionKeys.CORE_MANAGEMENT_ACCESS,
+    ],
+
     links: [
       {
-        to: '/dashboard/permission',
-        label: 'Permission',
+        to: "/dashboard/core-management/rolePermission",
+        label: "Role & Permission",
         icon: <FaUserShield className="size-6" />,
-        permissions: [PermissionKeys.PERMISSION_CREATE],
-      },
-      {
-        to: '/dashboard/permissionlist',
-        label: 'Permission List',
-        icon: <FaUsersCog className="size-6" />,
-        permissions: [PermissionKeys.PERMISSION_VIEW],
-      },
-      {
-        to: '/dashboard/roll',
-        label: 'Roll',
-        icon: <FaUserCheck className="size-6" />,
-        permissions: [PermissionKeys.ROLL_CREATE],
-      },
-      {
-        to: '/dashboard/rolllist',
-        label: 'Roll List',
-        icon: <FaList  className="size-6" />,
-        permissions: [PermissionKeys.ROLL_VIEW],
+
+        permissions: [
+          PermissionKeys.ROLES_VIEW,
+          PermissionKeys.ROLES_LIST,
+        ],
+
+        subLinks: [
+          {
+            to: "/dashboard/core-management/rolePermission/new",
+            label: "Create Role",
+            icon: <FaPlus className="size-6" />,
+
+            permissions: [
+              PermissionKeys.ROLES_CREATE,
+            ],
+          },
+
+          {
+            to: "/dashboard/core-management/rolePermission/list",
+            label: "Role List",
+            icon: <FaList className="size-6" />,
+
+            permissions: [
+              PermissionKeys.ROLES_LIST,
+              PermissionKeys.ROLES_VIEW,
+            ],
+          },
+        ],
       },
     ],
   },

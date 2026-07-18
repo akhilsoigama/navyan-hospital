@@ -262,8 +262,6 @@ const AllBillingPage = () => {
               <option>All Status</option>
               <option>Paid</option>
               <option>Pending</option>
-              <option>Partial</option>
-              <option>Overdue</option>
             </select>
 
           </div>

@@ -21,7 +21,7 @@ import Page from '../../section/Page';
 // ---------- Types ----------
 type Gender = 'Male' | 'Female' | 'Other';
 type BloodGroup = 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-';
-type MaritalStatus = 'Single' | 'Married' | 'Divorced' | 'Widowed';
+type MaritalStatus = 'Single' | 'Married';
 
 // ---------- Mock Data ----------
 const bloodGroups: BloodGroup[] = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
@@ -308,8 +308,6 @@ const AddBasicDetailPage = () => {
                     <option value="">Select status</option>
                     <option value="Single">Single</option>
                     <option value="Married">Married</option>
-                    <option value="Divorced">Divorced</option>
-                    <option value="Widowed">Widowed</option>
                   </select>
                 </div>
               </div>

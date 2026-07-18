@@ -14,26 +14,30 @@ export enum PermissionKeys {
     RX_ACCESS = 'rx_access',
     SETTINGS_ACCESS = 'settings_access',
 
-    // ========== CORE MODULES ==========
-    // Role & Permission Management
-    ROLES_VIEW = 'roles_view',
-    ROLES_CREATE = 'roles_create',
-    ROLES_UPDATE = 'roles_update',
-    ROLES_DELETE = 'roles_delete',
-    ROLES_LIST = 'roles_list',
+    // Core Management
+    CORE_MANAGEMENT_ACCESS = "core_management_access",
 
-    PERMISSIONS_VIEW = 'permissions_view',
+    // Role & Permission
+    ROLES_VIEW = "roles_view",
+    ROLES_CREATE = "roles_create",
+    ROLES_UPDATE = "roles_update",
+    ROLES_DELETE = "roles_delete",
+    ROLES_LIST = "roles_list",
 
     // User Management
-    USERS_CREATE = 'users_create',
-    USERS_UPDATE = 'users_update',
-    USERS_VIEW = 'users_view',
-    USERS_LIST = 'users_list',
-    USERS_DELETE = 'users_delete',
+    USERS_VIEW = "users_view",
+    USERS_CREATE = "users_create",
+    USERS_UPDATE = "users_update",
+    USERS_DELETE = "users_delete",
+    USERS_LIST = "users_list",
 
-    USER_ROLES_ASSIGN = 'user_roles_assign',
-    USER_ROLES_REMOVE = 'user_roles_remove',
-    USER_ROLES_VIEW = 'user_roles_view',
+    // Role Assignment
+    USER_ROLES_VIEW = "user_roles_view",
+    USER_ROLES_ASSIGN = "user_roles_assign",
+    USER_ROLES_REMOVE = "user_roles_remove",
+
+    // Permissions
+    PERMISSIONS_VIEW = "permissions_view",
 
     // ========== APPOINTMENTS MODULE ==========
     APPOINTMENT_VIEW = 'appointment_view',
@@ -105,7 +109,7 @@ export enum PermissionKeys {
     PERMISSION_DELETE = 'permission_delete',
 
 
-   // ========== ROLL MODULE ==========
+    // ========== ROLL MODULE ==========
     ROLL_VIEW = 'roll_view',
     ROLL_CREATE = 'roll_create',
     ROLL_UPDATE = 'roll_update',
@@ -203,19 +207,27 @@ export const PermissionModules = {
             PermissionKeys.CLINIC_MEMBER_LIST,
         ]
     },
-    PERMISSION:{
-        name: 'Permission',
+    PERMISSION: {
+        name: "Core System",
         permissions: [
-            PermissionKeys.PERMISSION_ACCESS,
-            PermissionKeys.PERMISSION_VIEW,
-            PermissionKeys.PERMISSION_CREATE,
-            PermissionKeys.PERMISSION_UPDATE,
-            PermissionKeys.PERMISSION_DELETE,
-            PermissionKeys.ROLL_VIEW,
+            PermissionKeys.ROLES_VIEW,
             PermissionKeys.ROLES_CREATE,
             PermissionKeys.ROLES_UPDATE,
             PermissionKeys.ROLES_DELETE,
-        ]
+            PermissionKeys.ROLES_LIST,
+
+            PermissionKeys.PERMISSIONS_VIEW,
+
+            PermissionKeys.USERS_VIEW,
+            PermissionKeys.USERS_CREATE,
+            PermissionKeys.USERS_UPDATE,
+            PermissionKeys.USERS_DELETE,
+            PermissionKeys.USERS_LIST,
+
+            PermissionKeys.USER_ROLES_VIEW,
+            PermissionKeys.USER_ROLES_ASSIGN,
+            PermissionKeys.USER_ROLES_REMOVE,
+        ],
     },
     MASTER: {
         name: 'Master',

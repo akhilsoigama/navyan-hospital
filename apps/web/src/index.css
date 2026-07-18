@@ -28,8 +28,7 @@
   --orange-accent-light: rgba(38, 121, 160, 0.1);
 }
 
-.dark {
-  /* Dark Theme Colors */
+/* .dark {
   --bg-app: #101312;
   --bg-card: #181d1c;
   --bg-inset: #131718;
@@ -51,7 +50,7 @@
   --divider-color: rgba(255, 255, 255, 0.06);
   --scrollbar-thumb: #2d615d;
   --orange-accent-light: rgba(56, 151, 168, 0.15);
-}
+} */
 
 @layer base {
   body {

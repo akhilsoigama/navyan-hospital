@@ -2,6 +2,10 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import type { User } from '../types';
 import DashboardLayout from '../section/DashboardLayout';
+import CreateRolePermission from "../pages/rollpermission/create_rollpermission";
+import ListRolePermission from "../pages/rollpermission/rolepermission_list";
+import UpdateRolePermission from "../pages/rollpermission/update_rollpermission";
+
 
 // ---------------------------------------------------------------------------
 // Lazy page imports
@@ -23,8 +27,6 @@ const AddAppointmentPage = lazy(
 const AppointmentListPage = lazy(
   () => import('../pages/appointments/AppointmentListPage'),
 );
-
-
 
 const AddBasicDetailPage = lazy(
   () => import('../pages/assessment/AddBasicDetailPage'),
@@ -83,7 +85,7 @@ const MemberListPage = lazy(
 const AccountPage = lazy(() => import('../pages/account/AccountPage'));
 
 // Stock
-const StockPage = lazy(() => import('../pages/master/StockPage'));
+const StockPage = lazy(() => import('../pages/stock_item/StockPage'));
 
 
 
@@ -166,7 +168,20 @@ const AppRoutes = ({ user }: AppRoutesProps) => (
 
         {/* ── Account (/dashboard/account) ─────────────────────────── */}
         <Route path="account" element={<AccountPage />} />
+        <Route
+          path="core-management/rolePermission/new"
+          element={<CreateRolePermission />}
+        />
 
+        <Route
+          path="core-management/rolePermission/list"
+          element={<ListRolePermission />}
+        />
+
+        <Route
+          path="core-management/rolePermission/:id/edit"
+          element={<UpdateRolePermission />}
+        />
         {/* ── Master (/dashboard/master/**) ────────────────────────── */}
         <Route path="master/stock" element={<StockPage />} />
 

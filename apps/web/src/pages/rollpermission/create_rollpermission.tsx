@@ -787,18 +787,6 @@ const CreateRolePage = () => {
     };
 
     /* =====================================================
-       ROLE CHANGE
-    ===================================================== */
-
-    const handleRoleChange = (
-        e: React.ChangeEvent<HTMLSelectElement>
-    ) => {
-        loadRole(
-            e.target.value as RoleType
-        );
-    };
-
-    /* =====================================================
        INITIAL LOAD
     ===================================================== */
 
@@ -854,38 +842,6 @@ const CreateRolePage = () => {
                             </h2>
 
                             <div className="mt-4 space-y-4">
-
-                                {/* ROLE TEMPLATE */}
-
-                                <div>
-
-                                    <label className="block text-sm font-medium text-slate-700">
-                                        Role Template
-                                    </label>
-
-                                    <select
-                                        value={selectedRoleType}
-                                        onChange={handleRoleChange}
-                                        className="mt-1 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-700 outline-none transition focus:border-amber-500 focus:bg-white focus:ring-2 focus:ring-amber-100"
-                                    >
-
-                                        <option value="doctor">
-                                            Doctor
-                                        </option>
-
-                                        <option value="reception">
-                                            Reception
-                                        </option>
-
-                                        <option value="patient">
-                                            Patient
-                                        </option>
-
-                                    </select>
-
-                                </div>
-
-                                {/* ROLE NAME */}
 
                                 <div>
 

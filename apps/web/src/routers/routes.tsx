@@ -53,12 +53,15 @@ const TreatmentListPage = lazy(
 );
 
 const RxPage = lazy(() => import('../pages/treatment/RxPage'));
-
+const RxListPage = lazy(() => import('../pages/treatment/RxListPage'));
 // Billing — /dashboard/billing/**
 
 const AllBillingPage = lazy(() => import('../pages/billing/AllBillingPage'));
 const DischargeReportPage = lazy(
   () => import('../pages/billing/DischargeReportPage'),
+);
+const DischargePatientPage = lazy(
+  () => import('../pages/billing/DischargePatient'),
 );
 const PendingPaymentPage = lazy(
   () => import('../pages/billing/PendingPaymentPage'),
@@ -68,7 +71,6 @@ const CollectionPage = lazy(
 );
 
 // Reports — /dashboard/reports
-const ReportsPage = lazy(() => import('../pages/reports/ReportsPage'));
 
 // Clinic Member — /dashboard/clinic-member/**
 const ClinicMemberPage = lazy(
@@ -86,7 +88,7 @@ const AccountPage = lazy(() => import('../pages/account/AccountPage'));
 
 // Stock
 const StockPage = lazy(() => import('../pages/stock_item/StockPage'));
-
+const StockCreate = lazy(() => import('../pages/stock_item/StockCreate'));
 
 
 // 404
@@ -150,16 +152,17 @@ const AppRoutes = ({ user }: AppRoutesProps) => (
         <Route path="treatment" element={<TreatmentPage />} />
         <Route path="treatment/new" element={<AddTreatmentPage />} />
         <Route path="treatment/list" element={<TreatmentListPage />} />
-        <Route path="rx" element={<RxPage />} />
+        <Route path="rx/new" element={<RxPage />} />
+        <Route path="rx/list" element={<RxListPage />} />
 
         {/* ── Billing (/dashboard/billing/**) ──────────────────────── */}
         <Route path="billing/all" element={<AllBillingPage />} />
-        <Route path="billing/discharge-report" element={<DischargeReportPage />} />
+        <Route path="discharge-patient/list" element={<DischargeReportPage />} />
+        <Route path="discharge-patient/new" element={<DischargePatientPage />} />
         <Route path="billing/pending-payment" element={<PendingPaymentPage />} />
         <Route path="billing/collection" element={<CollectionPage />} />
 
-        {/* ── Reports (/dashboard/reports) ─────────────────────────── */}
-        <Route path="reports" element={<ReportsPage />} />
+        {/* ── Reports (/dashboard/reports) ─────────────────────────── */}+
 
         {/* ── Clinic Member (/dashboard/clinic-member/**) ──────────── */}
         <Route path="clinic-member" element={<ClinicMemberPage />} />
@@ -184,10 +187,10 @@ const AppRoutes = ({ user }: AppRoutesProps) => (
         />
         {/* ── Master (/dashboard/master/**) ────────────────────────── */}
         <Route path="master/stock" element={<StockPage />} />
+        <Route path="master/stock/new" element={<StockCreate />} />
 
       </Route>
 
-      {/* ── 404 catch-all ─────────────────────────────────────────────── */}
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   </Suspense>

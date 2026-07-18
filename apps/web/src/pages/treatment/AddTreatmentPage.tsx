@@ -38,7 +38,7 @@ const TreatmentAddPage = () => {
   };
 
   return (
-    <div className="mx-auto max-w-6xl space-y-6 my-5">
+    <div className="mx-8 max-w-full space-y-6 my-5">
 
       {/* Page Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

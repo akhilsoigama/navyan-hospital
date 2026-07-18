@@ -13,7 +13,7 @@ export enum PermissionKeys {
     SEARCH_PATIENT_ACCESS = 'search_patient_access',
     RX_ACCESS = 'rx_access',
     SETTINGS_ACCESS = 'settings_access',
-
+    DISCHARGE_PATIENT_ACCESS = 'discharge_patient_access',
     // Core Management
     CORE_MANAGEMENT_ACCESS = "core_management_access",
 
@@ -108,6 +108,10 @@ export enum PermissionKeys {
     PERMISSION_UPDATE = 'permission_update',
     PERMISSION_DELETE = 'permission_delete',
 
+    DISCHARGE_PATIENT_VIEW = 'discharge_patient_view',
+    DISCHARGE_PATIENT_CREATE = 'discharge_patient_create',
+    DISCHARGE_PATIENT_UPDATE = 'discharge_patient_update',
+    DISCHARGE_PATIENT_DELETE = 'discharge_patient_delete',
 
     // ========== ROLL MODULE ==========
     ROLL_VIEW = 'roll_view',
@@ -118,9 +122,17 @@ export enum PermissionKeys {
     // ========== MASTER MODULE ==========
     MASTER_VIEW = 'master_view',
     MASTER_STOCK_VIEW = 'master_stock_view',
-
+    MASTER_STOCK_CREATE = 'master_stock_create',
+    MASTER_STOCK_UPDATE = 'master_stock_update',
+    MASTER_STOCK_DELETE = 'master_stock_delete',
     // ========== DASHBOARD MODULE ==========
     DASHBOARD_OVERVIEW_VIEW = 'dashboard_overview_view',
+
+    RX_VIEW = 'rx_view',
+    RX_CREATE = 'rx_create',
+    RX_UPDATE = 'rx_update',
+    RX_DELETE = 'rx_delete',
+    RX_LIST = 'rx_list',
 }
 
 export const PermissionModules = {
@@ -176,6 +188,21 @@ export const PermissionModules = {
             PermissionKeys.TREATMENT_DELETE,
             PermissionKeys.TREATMENT_LIST,
             PermissionKeys.RX_ACCESS,
+            PermissionKeys.RX_VIEW,
+            PermissionKeys.RX_CREATE,
+            PermissionKeys.RX_UPDATE,
+            PermissionKeys.RX_DELETE,
+            PermissionKeys.RX_LIST,
+        ]
+    },
+    DISCHARGE_PATIENT: {
+        name: 'Discharge Patient',
+        permissions: [
+            PermissionKeys.DISCHARGE_PATIENT_VIEW,
+            PermissionKeys.DISCHARGE_PATIENT_CREATE,
+            PermissionKeys.DISCHARGE_PATIENT_UPDATE,
+            PermissionKeys.DISCHARGE_PATIENT_DELETE,
+            PermissionKeys.DISCHARGE_PATIENT_ACCESS,
         ]
     },
     BILLING: {
@@ -234,6 +261,9 @@ export const PermissionModules = {
         permissions: [
             PermissionKeys.MASTER_VIEW,
             PermissionKeys.MASTER_STOCK_VIEW,
+            PermissionKeys.MASTER_STOCK_CREATE,
+            PermissionKeys.MASTER_STOCK_UPDATE,
+            PermissionKeys.MASTER_STOCK_DELETE,
         ]
     },
     DASHBOARD: {

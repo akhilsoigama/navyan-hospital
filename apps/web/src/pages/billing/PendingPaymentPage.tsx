@@ -49,7 +49,7 @@ const pendingPayments: PendingPayment[] = [
     paidAmount: "₹2,000",
     pendingAmount: "₹2,500",
     dueDate: "18 Jul 2026",
-    status: "Partial",
+    status: "Pending",
   },
   {
     id: "PAY-1003",
@@ -310,7 +310,7 @@ const PendingPaymentPage = () => {
         {/* Desktop View */}
         <div className="hidden overflow-x-auto lg:block">
 
-          <div className="min-w-[1100px]">
+          <div className="min-w-275">
 
             {/* Columns */}
             <div className="grid grid-cols-[1.3fr_1.7fr_1.4fr_1fr_1fr_1fr_1fr] gap-4 border-b border-slate-100 bg-slate-50 px-6 py-4 text-xs font-semibold uppercase tracking-wide text-slate-500">

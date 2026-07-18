@@ -15,23 +15,17 @@ const LoginPage = lazy(() => import('../pages/auth/LoginPage'));
 const DashboardPage = lazy(() => import('../pages/dashboard/DashboardPage'));
 
 // Appointments — /dashboard/appointments/**
-const AppointmentsPage = lazy(
-  () => import('../pages/appointments/AppointmentsPage'),
-);
+
+
 const AddAppointmentPage = lazy(
   () => import('../pages/appointments/AddAppointmentPage'),
 );
 const AppointmentListPage = lazy(
   () => import('../pages/appointments/AppointmentListPage'),
 );
-const AddAppointmentPaPage = lazy(
-  () => import('../pages/appointments/AddAppointmentPaPage'),
-);
 
-// Assessment — /dashboard/assessment/**
-const AssessmentPage = lazy(
-  () => import('../pages/assessment/AssessmentPage'),
-);
+
+
 const AddBasicDetailPage = lazy(
   () => import('../pages/assessment/AddBasicDetailPage'),
 );
@@ -129,7 +123,7 @@ const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 // ---------------------------------------------------------------------------
 
 const PageLoader = () => (
-  <div className="flex items-center justify-center h-full min-h-[200px]">
+  <div className="flex items-center justify-center h-full min-h-screen">
     <div className="w-6 h-6 rounded-full border-2 border-t-transparent animate-spin" />
   </div>
 );
@@ -168,13 +162,11 @@ const AppRoutes = ({ user }: AppRoutesProps) => (
         <Route index element={<DashboardPage />} />
 
         {/* ── Appointments (/dashboard/appointments/**) ─────────────── */}
-        <Route path="appointments" element={<AppointmentsPage />} />
         <Route path="appointments/new" element={<AddAppointmentPage />} />
         <Route path="appointments/list" element={<AppointmentListPage />} />
-        <Route path="appointments/pa/new" element={<AddAppointmentPaPage />} />
+
 
         {/* ── Assessment (/dashboard/assessment/**) ────────────────── */}
-        <Route path="assessment" element={<AssessmentPage />} />
         <Route path="assessment/basic/new" element={<AddBasicDetailPage />} />
         <Route path="assessment/basic/list" element={<BasicDetailListPage />} />
         <Route path="assessment/advance/new" element={<AddAdvanceDetailPage />} />

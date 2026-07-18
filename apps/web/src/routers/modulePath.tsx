@@ -57,12 +57,6 @@ export const modules: Module[] = [
             icon: <FaList className="size-6" />,
             permissions: [PermissionKeys.APPOINTMENT_LIST, PermissionKeys.APPOINTMENT_VIEW],
           },
-          {
-            to: '/dashboard/appointments/pa/new',
-            label: 'Add (PA)',
-            icon: <FaPlus className="size-6" />,
-            permissions: [PermissionKeys.APPOINTMENT_PA_CREATE],
-          },
         ],
       },
     ],

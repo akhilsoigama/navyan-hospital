@@ -55,44 +55,20 @@ const AddTreatmentPage = lazy(
 const TreatmentListPage = lazy(
   () => import('../pages/treatment/TreatmentListPage'),
 );
-const TreatmentAddPage = lazy(
-  () => import('../pages/treatment/TreatmentAddPage'),
-);
+
 const RxPage = lazy(() => import('../pages/treatment/RxPage'));
 
 // Billing — /dashboard/billing/**
-const BillingPage = lazy(() => import('../pages/billing/BillingPage'));
+
 const AllBillingPage = lazy(() => import('../pages/billing/AllBillingPage'));
 const DischargeReportPage = lazy(
   () => import('../pages/billing/DischargeReportPage'),
-);
-const MedicalLeavePage = lazy(
-  () => import('../pages/billing/MedicalLeavePage'),
-);
-const TreatmentRequiredPage = lazy(
-  () => import('../pages/billing/TreatmentRequiredPage'),
-);
-const WheelchairAirportPage = lazy(
-  () => import('../pages/billing/WheelchairAirportPage'),
-);
-const PatientFilePage = lazy(
-  () => import('../pages/billing/PatientFilePage'),
-);
-const PatientLinkPage = lazy(
-  () => import('../pages/billing/PatientLinkPage'),
 );
 const PendingPaymentPage = lazy(
   () => import('../pages/billing/PendingPaymentPage'),
 );
 const CollectionPage = lazy(
   () => import('../pages/billing/CollectionPage'),
-);
-
-// Expense — /dashboard/expense/**
-const ExpensePage = lazy(() => import('../pages/expense/ExpensePage'));
-const AddExpensePage = lazy(() => import('../pages/expense/AddExpensePage'));
-const ExpenseListPage = lazy(
-  () => import('../pages/expense/ExpenseListPage'),
 );
 
 // Reports — /dashboard/reports
@@ -112,14 +88,10 @@ const MemberListPage = lazy(
 // Account — /dashboard/account
 const AccountPage = lazy(() => import('../pages/account/AccountPage'));
 
-// Master — /dashboard/master/**
-const MasterPage = lazy(() => import('../pages/master/MasterPage'));
+// Stock
 const StockPage = lazy(() => import('../pages/master/StockPage'));
 
-// Search Patient — /dashboard/search-patient
-const SearchPatientPage = lazy(
-  () => import('../pages/search-patient/SearchPatientPage'),
-);
+
 
 // 404
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
@@ -184,25 +156,13 @@ const AppRoutes = ({ user }: AppRoutesProps) => (
         <Route path="treatment" element={<TreatmentPage />} />
         <Route path="treatment/new" element={<AddTreatmentPage />} />
         <Route path="treatment/list" element={<TreatmentListPage />} />
-        <Route path="treatment/add" element={<TreatmentAddPage />} />
         <Route path="rx" element={<RxPage />} />
 
         {/* ── Billing (/dashboard/billing/**) ──────────────────────── */}
-        <Route path="billing" element={<BillingPage />} />
         <Route path="billing/all" element={<AllBillingPage />} />
         <Route path="billing/discharge-report" element={<DischargeReportPage />} />
-        <Route path="billing/medical-leave" element={<MedicalLeavePage />} />
-        <Route path="billing/treatment-required" element={<TreatmentRequiredPage />} />
-        <Route path="billing/wheelchair-airport" element={<WheelchairAirportPage />} />
-        <Route path="billing/patient-file" element={<PatientFilePage />} />
-        <Route path="billing/patient-link" element={<PatientLinkPage />} />
         <Route path="billing/pending-payment" element={<PendingPaymentPage />} />
         <Route path="billing/collection" element={<CollectionPage />} />
-
-        {/* ── Expense (/dashboard/expense/**) ──────────────────────── */}
-        <Route path="expense" element={<ExpensePage />} />
-        <Route path="expense/new" element={<AddExpensePage />} />
-        <Route path="expense/list" element={<ExpenseListPage />} />
 
         {/* ── Reports (/dashboard/reports) ─────────────────────────── */}
         <Route path="reports" element={<ReportsPage />} />
@@ -216,11 +176,8 @@ const AppRoutes = ({ user }: AppRoutesProps) => (
         <Route path="account" element={<AccountPage />} />
 
         {/* ── Master (/dashboard/master/**) ────────────────────────── */}
-        <Route path="master" element={<MasterPage />} />
         <Route path="master/stock" element={<StockPage />} />
 
-        {/* ── Search Patient (/dashboard/search-patient) ───────────── */}
-        <Route path="search-patient" element={<SearchPatientPage />} />
       </Route>
 
       {/* ── 404 catch-all ─────────────────────────────────────────────── */}

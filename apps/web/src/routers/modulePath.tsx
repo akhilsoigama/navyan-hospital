@@ -8,16 +8,13 @@ import {
   FaClipboardList,
   FaProcedures,
   FaFileInvoiceDollar,
-  FaMoneyBillWave,
   FaChartBar,
   FaUsers,
   FaUniversity,
-  FaCog,
-  FaSearch,
   FaWallet,
   FaBoxOpen,
   FaPrescriptionBottleAlt,
-  FaUserPlus,
+  FaCog,
 } from 'react-icons/fa'
 import { PermissionKeys } from '../utils/permission'
 import type { Module } from '../types/sidebar'
@@ -130,12 +127,6 @@ export const modules: Module[] = [
         ],
       },
       {
-        to: '/dashboard/treatment/add',
-        label: 'Treatment Add',
-        icon: <FaUserPlus className="size-6" />,
-        permissions: [PermissionKeys.TREATMENT_CREATE],
-      },
-      {
         to: '/dashboard/rx',
         label: 'RX',
         icon: <FaPrescriptionBottleAlt className="size-6" />,
@@ -165,36 +156,6 @@ export const modules: Module[] = [
             icon: <FaClipboardList className="size-6" />,
             permissions: [PermissionKeys.BILLING_DISCHARGE_REPORT_VIEW],
           },
-          {
-            to: '/dashboard/billing/medical-leave',
-            label: 'Medical Leave',
-            icon: <FaClipboardList className="size-6" />,
-            permissions: [PermissionKeys.BILLING_MEDICAL_LEAVE_VIEW],
-          },
-          {
-            to: '/dashboard/billing/treatment-required',
-            label: 'Treatment Required',
-            icon: <FaProcedures className="size-6" />,
-            permissions: [PermissionKeys.BILLING_TREATMENT_REQUIRED_VIEW],
-          },
-          {
-            to: '/dashboard/billing/wheelchair-airport',
-            label: 'Wheel Chair Airport',
-            icon: <FaClipboardList className="size-6" />,
-            permissions: [PermissionKeys.BILLING_WHEELCHAIR_AIRPORT_VIEW],
-          },
-          {
-            to: '/dashboard/billing/patient-file',
-            label: 'Patient File',
-            icon: <FaClipboardList className="size-6" />,
-            permissions: [PermissionKeys.BILLING_PATIENT_FILE_VIEW],
-          },
-          {
-            to: '/dashboard/billing/patient-link',
-            label: 'Patient Link',
-            icon: <FaClipboardList className="size-6" />,
-            permissions: [PermissionKeys.BILLING_PATIENT_LINK_VIEW],
-          },
         ],
       },
       {
@@ -208,32 +169,6 @@ export const modules: Module[] = [
         label: 'This Month Collection',
         icon: <FaChartBar className="size-6" />,
         permissions: [PermissionKeys.BILLING_COLLECTION_VIEW],
-      },
-    ],
-  },
-  {
-    moduleName: 'Expense',
-    permissions: [PermissionKeys.EXPENSE_ACCESS],
-    links: [
-      {
-        to: '/dashboard/expense',
-        label: 'Expense',
-        icon: <FaMoneyBillWave className="size-6" />,
-        permissions: [PermissionKeys.EXPENSE_VIEW, PermissionKeys.EXPENSE_LIST],
-        subLinks: [
-          {
-            to: '/dashboard/expense/new',
-            label: 'Add Expense',
-            icon: <FaPlus className="size-6" />,
-            permissions: [PermissionKeys.EXPENSE_CREATE],
-          },
-          {
-            to: '/dashboard/expense/list',
-            label: 'Manage Expenses',
-            icon: <FaList className="size-6" />,
-            permissions: [PermissionKeys.EXPENSE_LIST, PermissionKeys.EXPENSE_VIEW],
-          },
-        ],
       },
     ],
   },
@@ -276,44 +211,44 @@ export const modules: Module[] = [
     ],
   },
   {
-    moduleName: 'Account',
-    permissions: [PermissionKeys.ACCOUNT_ACCESS],
+    moduleName: 'Permission',
+    permissions: [PermissionKeys.PERMISSION_ACCESS],
     links: [
       {
-        to: '/dashboard/account',
-        label: 'Account',
+        to: '/dashboard/permission',
+        label: 'Permission',
         icon: <FaUniversity className="size-6" />,
-        permissions: [PermissionKeys.ACCOUNT_VIEW],
+        permissions: [PermissionKeys.PERMISSION_CREATE],
+      },
+      {
+        to: '/dashboard/permissionlist',
+        label: 'Permission List',
+        icon: <FaUniversity className="size-6" />,
+        permissions: [PermissionKeys.PERMISSION_VIEW],
+      },
+      {
+        to: '/dashboard/roll',
+        label: 'Roll',
+        icon: <FaCog className="size-6" />,
+        permissions: [PermissionKeys.ROLL_CREATE],
+      },
+      {
+        to: '/dashboard/rolllist',
+        label: 'Roll List',
+        icon: <FaCog className="size-6" />,
+        permissions: [PermissionKeys.ROLL_VIEW],
       },
     ],
   },
   {
-    moduleName: 'Master',
+    moduleName: 'Stock / Items',
     permissions: [PermissionKeys.MASTER_ACCESS],
     links: [
-      {
-        to: '/dashboard/master',
-        label: 'Master',
-        icon: <FaCog className="size-6" />,
-        permissions: [PermissionKeys.MASTER_VIEW],
-      },
       {
         to: '/dashboard/master/stock',
         label: 'Stock / Items View',
         icon: <FaBoxOpen className="size-6" />,
         permissions: [PermissionKeys.MASTER_STOCK_VIEW],
-      },
-    ],
-  },
-  {
-    moduleName: 'Search Patient',
-    permissions: [PermissionKeys.SEARCH_PATIENT_ACCESS],
-    links: [
-      {
-        to: '/dashboard/search-patient',
-        label: 'Search Patient (Mobile Number)',
-        icon: <FaSearch className="size-6" />,
-        permissions: [PermissionKeys.SEARCH_PATIENT_ACCESS],
       },
     ],
   },

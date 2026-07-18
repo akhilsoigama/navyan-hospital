@@ -97,8 +97,19 @@ export enum PermissionKeys {
     CLINIC_MEMBER_DELETE = 'clinic_member_delete',
     CLINIC_MEMBER_LIST = 'clinic_member_list',
 
-    // ========== ACCOUNT MODULE ==========
-    ACCOUNT_VIEW = 'account_view',
+    // ========== PERMISSION MODULE ==========
+    PERMISSION_ACCESS = 'permission_access',
+    PERMISSION_VIEW = 'permission_view',
+    PERMISSION_CREATE = 'permission_create',
+    PERMISSION_UPDATE = 'permission_update',
+    PERMISSION_DELETE = 'permission_delete',
+
+
+   // ========== ROLL MODULE ==========
+    ROLL_VIEW = 'roll_view',
+    ROLL_CREATE = 'roll_create',
+    ROLL_UPDATE = 'roll_update',
+    ROLL_DELETE = 'roll_delete',
 
     // ========== MASTER MODULE ==========
     MASTER_VIEW = 'master_view',
@@ -172,23 +183,8 @@ export const PermissionModules = {
             PermissionKeys.BILLING_DELETE,
             PermissionKeys.BILLING_LIST,
             PermissionKeys.BILLING_DISCHARGE_REPORT_VIEW,
-            PermissionKeys.BILLING_MEDICAL_LEAVE_VIEW,
-            PermissionKeys.BILLING_TREATMENT_REQUIRED_VIEW,
-            PermissionKeys.BILLING_WHEELCHAIR_AIRPORT_VIEW,
-            PermissionKeys.BILLING_PATIENT_FILE_VIEW,
-            PermissionKeys.BILLING_PATIENT_LINK_VIEW,
             PermissionKeys.BILLING_PENDING_PAYMENT_VIEW,
             PermissionKeys.BILLING_COLLECTION_VIEW,
-        ]
-    },
-    EXPENSE: {
-        name: 'Expense',
-        permissions: [
-            PermissionKeys.EXPENSE_VIEW,
-            PermissionKeys.EXPENSE_CREATE,
-            PermissionKeys.EXPENSE_UPDATE,
-            PermissionKeys.EXPENSE_DELETE,
-            PermissionKeys.EXPENSE_LIST,
         ]
     },
     REPORTS: {
@@ -207,10 +203,18 @@ export const PermissionModules = {
             PermissionKeys.CLINIC_MEMBER_LIST,
         ]
     },
-    ACCOUNT: {
-        name: 'Account',
+    PERMISSION:{
+        name: 'Permission',
         permissions: [
-            PermissionKeys.ACCOUNT_VIEW,
+            PermissionKeys.PERMISSION_ACCESS,
+            PermissionKeys.PERMISSION_VIEW,
+            PermissionKeys.PERMISSION_CREATE,
+            PermissionKeys.PERMISSION_UPDATE,
+            PermissionKeys.PERMISSION_DELETE,
+            PermissionKeys.ROLL_VIEW,
+            PermissionKeys.ROLES_CREATE,
+            PermissionKeys.ROLES_UPDATE,
+            PermissionKeys.ROLES_DELETE,
         ]
     },
     MASTER: {
